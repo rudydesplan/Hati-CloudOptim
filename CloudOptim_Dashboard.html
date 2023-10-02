@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CloudOptim Dashboard</title>
+  <style>
+    
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styling */
+header {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+/* Main Section Styling */
+main {
+  padding: 1em;
+}
+
+main h2 {
+  font-size: 1.5em;
+}
+
+main ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+main ul li {
+  background-color: #f4f4f4;
+  margin: 8px 0;
+  padding: 12px;
+  text-align: center;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 600px) {
+  main h2 {
+    font-size: 1.2em;
+  }
+  main ul li {
+    font-size: 0.8em;
+  }
+}
+
+/* Styling for favorite servers */
+.favorite {
+  background-color: yellow;
+}
+
+  </style>
+  <script>
+    
+// Function to toggle favorite status
+function toggleFavorite(event) {
+  const listItem = event.target.closest('li');
+  const button = event.target;
+  
+  // Toggle favorite class for the list item
+  listItem.classList.toggle('favorite');
+  
+  // Update button color
+  if (listItem.classList.contains('favorite')) {
+    button.style.backgroundColor = 'green';
+    button.innerHTML = 'Unfavorite';
+    // Show notification
+    alert('Server has been marked as favorite.');
+  } else {
+    button.style.backgroundColor = 'gray';
+    button.innerHTML = 'Favorite';
+    // Show notification
+    alert('Server has been removed from favorites.');
+  }
+}
+
+// Adding event listeners to Favorite buttons
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.favorite-button');
+  
+  buttons.forEach(function(button) {
+    button.addEventListener('click', toggleFavorite);
+  });
+});
+
+  </script>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <img src="logo.png" alt="CloudOptim Logo">
+    <h1>CloudOptim</h1>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <h2>Server List</h2>
+    <ul>
+      <li>Server 1: Status (Online), CPU Usage (35%), Memory Usage (60%) <button class="favorite-button" style="background-color: gray;">Favorite</button></li>
+      <li>Server 2: Status (Offline), CPU Usage (N/A), Memory Usage (N/A) <button class="favorite-button" style="background-color: gray;">Favorite</button></li>
+      <li>Server 3: Status (Online), CPU Usage (50%), Memory Usage (40%) <button class="favorite-button" style="background-color: gray;">Favorite</button></li>
+    </ul>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>Copyright 2023, CloudOptim</p>
+  </footer>
+
+</body>
+</html>
