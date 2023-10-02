@@ -1,0 +1,65 @@
+// SCSS Variables
+$font-family-main: Arial, sans-serif;
+$color-primary: #4CAF50;
+$color-secondary: #f4f4f4;
+$color-footer: #333;
+$color-favorite: yellow;
+
+// General Styling
+body {
+  font-family: $font-family-main;
+  margin: 0;
+  padding: 0;
+}
+
+// Header Styling
+header {
+  background-color: $color-primary;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+// Main Section Styling
+main {
+  padding: 1em;
+}
+
+main h2 {
+  font-size: 1.5em;
+}
+
+main ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+main ul li {
+  background-color: $color-secondary;
+  margin: 8px 0;
+  padding: 12px;
+  text-align: center;
+}
+
+// Footer Styling
+footer {
+  background-color: $color-footer;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+// Responsiveness
+@media only screen and (max-width: 600px) {
+  main h2 {
+    font-size: 1.2em;
+  }
+  main ul li {
+    font-size: 0.8em;
+  }
+}
+
+// Styling for favorite servers
+.favorite {
+  background-color: $color-favorite;
+}
